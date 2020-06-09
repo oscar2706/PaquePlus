@@ -1,0 +1,22 @@
+{
+  "name": "paqueplus",
+  "version": "1.0.0",
+  "description": "Este es un proyecto desarrollado para la materia de Servicios Web.  Proyecto PHP con bootstrap 4.5 Esta aplicación web tiene como objetivo el simular el sistema de una empresa de paqueteria.",
+  "main": "jquery-3.0.0.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscar2706/PaquePlus.git"
+  },
+  "author": "Oscar Patricio Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oscar2706/PaquePlus/issues"
+  },
+  "homepage": "https://github.com/oscar2706/PaquePlus#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0"
+  }
+}
