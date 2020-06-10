@@ -1,24 +1,16 @@
 <?php
-class Conexion
+
+function getConnection()
 {
-  var $conn;
-
-  public function __construct()
-  {
-    try {
-      $servername = "localhost:3306";
-      $username = "root";
-      $password = "";
-      $dbName = "PaquePlus";
-      $this->conn = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
-      $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOexception $e) {
-      echo "ERROR: " . $e->getMessage();
-    }
-  }
-
-  public function close()
-  {
-    $this->conn = null;
+  try {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbName = "PaquePlus";
+    $conn = new PDO("mysql:host=$servername;port=3306;dbname=$dbName", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $conn;
+  } catch (PDOexception $e) {
+    echo "ERROR: " . $e->getMessage();
   }
 }

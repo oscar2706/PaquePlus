@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+if(isset($_SESSION['idUsuario'])){
+  echo $_SESSION['idUsuario'];
+}  
+?>
 <!doctype html>
 <html lang="es_MX">
 

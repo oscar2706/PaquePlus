@@ -1,3 +1,6 @@
+<?php 
+
+?>
 <!doctype html>
 <html lang="es_MX">
 
@@ -14,7 +17,7 @@
 </head>
 
 <body>
-  <form class="form-signin">
+  <form class="form-signin" method="POST">
     <div class="text-center mb-4">
       <img class="mb-4 img-fluid" src="assets/img/paquePlus.png" height="100">
       <h1 class="h3 mb-3 font-weight-light">Inicio de sesión</h1>

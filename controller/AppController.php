@@ -16,5 +16,5 @@ function haIniciadoSesion()
 function redirigeA($direccionArchivo)
 {
   $host  = $_SERVER['HTTP_HOST'];
-  header("Location: http://$host:8080/PaquePlus/$direccionArchivo");
+  header("Location: http://$host/PaquePlus/$direccionArchivo");
 }

@@ -1,6 +1,5 @@
 <?php
-require_once('controller/conexion.php');
-$conn = new Conexion();
+
 ?>
 <!doctype html>
 <html lang="es_MX">
@@ -103,6 +102,8 @@ $conn = new Conexion();
           href="../getting-started/introduction/">getting started guide</a>.</p>
     </div>
   </footer>
+
+  <!-- JavaScript Jquery, Bootstrap -->
   <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
