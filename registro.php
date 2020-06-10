@@ -1,31 +1,31 @@
 <?php
-require_once('controller/conexion.php');
-require_once('controller/AppController.php');
+  require_once('controller/conexion.php');
+  require_once('controller/AppController.php');
 
-$conn = getConnection();
+  $conn = getConnection();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  try {
-    $sql = "INSERT INTO Usuario (correo, password) VALUES (?,?)";
-    $stmt = $conn->prepare($sql);
-    if ($stmt->execute([$_POST['correo'], $_POST['contraseña']])) {
-      $query = $conn->prepare("SELECT idUsuario FROM Usuario 
-                        WHERE correo = '" . $_POST['correo'] . "' AND password  = '" . $_POST['contraseña'] . "' 
-                        LIMIT 1");
-      $query->execute();
-      $registro = $query->fetch(PDO::FETCH_OBJ);
-      var_dump($registro);
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+      $sql = "INSERT INTO Usuario (correo, password) VALUES (?,?)";
+      $stmt = $conn->prepare($sql);
+      if ($stmt->execute([$_POST['correo'], $_POST['contraseña']])) {
+        $query = $conn->prepare("SELECT idUsuario FROM Usuario 
+                          WHERE correo = '" . $_POST['correo'] . "' AND password  = '" . $_POST['contraseña'] . "' 
+                          LIMIT 1");
+        $query->execute();
+        $registro = $query->fetch(PDO::FETCH_OBJ);
+        var_dump($registro);
 
-      session_start();
-      $_SESSION['idUsuario'] = $registro->idUsuario;
-      redirigeA('cliente/principal_cliente.php');
-    }
-  } catch (PDOexception $e) {
-    if ($e->getCode() == 23000) {
-      $msgError = 'Este correo ya esta registrado';
+        session_start();
+        $_SESSION['idUsuario'] = $registro->idUsuario;
+        redirigeA('cliente/principal_cliente.php');
+      }
+    } catch (PDOexception $e) {
+      if ($e->getCode() == 23000) {
+        $msgError = 'Este correo ya esta registrado';
+      }
     }
   }
-}
 ?>
 
 <!doctype html>
@@ -39,12 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <!-- Estilos -->
   <link href="assets/scss/styles.css" rel="stylesheet">
   <link href="assets/css/login.css" rel="stylesheet">
+  
+  <!-- reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <title>PaquePlus - Iniciar sesión</title>
 </head>
 
 <body>
-  <form class="form-signin needs-validation" method="POST">
+  <form class="form-signin needs-validation" method="POST"> 
     <div class="text-center mb-4">
       <img class="mb-4 img-fluid" src="assets/img/paquePlus.png" height="100">
       <h1 class="h5 font-weight-light text-secondary">Unete a PaquePlus</h1>
@@ -63,7 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </button>
           </div>
         <?php endif; ?>
-
         <div class="form-label-group">
           <input type="email" name="correo" id="inputEmail" class="form-control" placeholder="Correo" required autofocus>
           <label for="inputEmail">Correo</label>
@@ -78,16 +80,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <input type="password" name="confirmacionContraseña" id="inputPasswordConfirm" class="form-control" placeholder="Confirma contraseña" required>
           <label for="inputPassword">Confirma contraseña</label>
         </div>
+
+        <!-- reCaptcha -->
+        <div class="g-recaptcha mb-3 d-flex justify-content-center" data-sitekey="6LfeCqMZAAAAAAat8oifR-HFwb8uFMVWaLDzPLCd"></div>
+
         <button id="btnSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Crear cuenta</button>
       </div>
     </div>
     <p class="mt-5 mb-3 text-muted text-center">&copy; Diseñado por Oscar Patricio </p>
   </form>
 
-  <!-- JavaScript Jquery, Bootstrap -->
-  <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   <script>
+    $(document).ready(function(){
+      $('.form-signin').on('submit', function(event){
+        var recaptcha = $('#g-recaptcha-response').val();
+        console.log(recaptcha);
+        if (recaptcha === ''){
+          event.preventDefault();
+          alert('Comprueba que no eres un robot');
+        }
+        $.post("controller/verify.php", {
+          "secret": "6LfeCqMZAAAAAAz6HnUZWU9MAQHZ1oSsX-1Zdp_-",
+          "response": recaptcha
+        }, function(response){
+          console.log('Respuesta post {verify}');
+          console.log(response);
+        })
+      })
+    });
+
     let password = document.getElementById("inputPassword");
     let confirm_password = document.getElementById("inputPasswordConfirm");
 

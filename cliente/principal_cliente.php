@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['idUsuario'])){
-  // TODO: carga información del usuario
+  $idUsuario = $_SESSION['idUsuario'];
 }  
 ?>
 <!doctype html>
@@ -125,7 +125,7 @@ if(isset($_SESSION['idUsuario'])){
     </div>
   </footer>
   <script src="../assets/js/jquery-3.5.1.slim.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
