@@ -40,7 +40,7 @@
 
     <div class="card mt-3">
       <div class="card-body text-center">
-        ¿Aún no eres cliente? <a href="#" class="">Crea una cuenta</a>.
+        ¿Aún no eres cliente? <a href="registro.php">Crea una cuenta</a>.
       </div>
     </div>
     <p class="mt-5 mb-3 text-muted text-center">&copy; Diseñado por Oscar Patricio </p>
