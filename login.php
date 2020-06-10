@@ -1,36 +1,5 @@
 <?php
-require_once('controller/conexion.php');
-require_once('controller/AppController.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $conn = getConnection();
-  try {
-    $query = $conn->prepare("SELECT idUsuario FROM Usuario 
-                            WHERE correo = '" . $_POST['correo'] . "'
-                            LIMIT 1");
-    $query->execute();
-    $registro = $query->fetch(PDO::FETCH_OBJ);
-    
-    if (!$registro){
-      $msgError = 'Este correo no esta registrado';
-    } else {
-      $query = $conn->prepare("SELECT idUsuario FROM Usuario 
-                              WHERE correo = '" . $_POST['correo'] . "' AND password  = '" . $_POST['contraseña'] . "'
-                              LIMIT 1");
-      $query->execute();
-      $registro = $query->fetch(PDO::FETCH_OBJ);
-      if (!$registro){
-        $msgError = 'La contraseña es incorrecta';
-      } else {
-        session_start();
-        $_SESSION['idUsuario'] = $registro->idUsuario;
-        redirigeA('cliente/principal_cliente.php');
-      }
-    }
-  } catch (PDOexception $e) {
-    $msgError = 'Error: ' . $e->getCode() . ' ' . $e->getMessage();
-  }
-}
 ?>
 
 <!doctype html>
