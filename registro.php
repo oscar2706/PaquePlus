@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="card">
       <div class="card-body">
+        
         <!-- Mensaje error -->
         <?php if (isset($msgError)) : ?>
           <div class="alert alert-danger" role="alert">

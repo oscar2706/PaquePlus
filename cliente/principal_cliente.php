@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['idUsuario'])){
-  echo $_SESSION['idUsuario'];
+  // TODO: carga información del usuario
 }  
 ?>
 <!doctype html>
