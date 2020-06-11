@@ -18,14 +18,14 @@
 
 <body>
   <!-- Barra de navegación -->
-  <div class="d-flex flex-column flex-md-row align-items-center py-2 px-md-4 bg-white border-bottom shadow-sm">
+  <div class="d-flex flex-column flex-md-row align-items-center pt-2 px-md-4 bg-white border-bottom shadow-sm">
     <div class="my-0 mr-md-auto font-weight-normal">
       <img src="assets/img/paquePlus.png" width="165" class="d-inline-block align-top" alt="" loading="lazy">
     </div>
-    <nav class="my-2 my-md-0 mr-md-3">
+    <nav class="my-md-0 mr-md-3">
       <a class="p-2 text-dark" href="#">Rastreos</a>
       <a class="p-2 text-dark" href="#">Envíos</a>
-      <a class="p-2 text-dark" href="#">Cotización</a>
+      <a class="p-2 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-2 text-dark" href="#">Sobre nosotros</a>
     </nav>
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
@@ -42,22 +42,26 @@
       <div class="carousel-item active">
         <img src="assets/img/recibe_paquete3.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-sm-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Tú eres nuestra prioridad</h5>
+          <p>En PaquePlus nuestra meta es brindarte el mejor servicio posible. 
+            Por esto ofrecemos los mejores servicios de paqueteria.</p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="assets/img/call_center.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-sm-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5>¿Tienes alguna duda? Contactanos</h5>
+          <p>En PaquePlus nuestros clientes son lo más importante. Por este motivo ofrecemos atención al cliente 
+            24 horas los 7 días de la semana. Contactanos al (775)-141-99-32
+          </p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="assets/img/avion_paqueplus.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-sm-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h5>Siempre ofreciendo servicios de calidad</h5>
+          <p>Como una empresa inovadora en PaquePlus siempre estamos buscando más y mejores formas de cumplir nuestra misión. 
+            Brindarte la mejor atención y los mejores servicios.</p>
         </div>
       </div>
     </div>

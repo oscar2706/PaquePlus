@@ -14,7 +14,7 @@
 
 <body class="bg-light">
   <!-- Barra de navegación -->
-  <div class="d-flex flex-column flex-md-row align-items-center py-2 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <div class="d-flex flex-column flex-md-row align-items-center pt-2 px-md-4 bg-white border-bottom shadow-sm">
     <div class="my-0 mr-md-auto font-weight-normal">
       <img src="assets/img/paquePlus.png" width="165" class="d-inline-block align-top" alt="" loading="lazy">
     </div>
