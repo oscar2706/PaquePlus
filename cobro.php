@@ -14,18 +14,19 @@
 
 <body class="bg-light">
   <!-- Barra de navegación -->
-  <div class="d-flex flex-column flex-md-row align-items-center pt-2 px-md-4 bg-white border-bottom shadow-sm">
+  <div class="d-flex flex-column flex-md-row align-items-center py-3 py-lg-1 px-0 px-md-4 bg-white border-bottom shadow-sm">
     <div class="my-0 mr-md-auto font-weight-normal">
       <img src="assets/img/paquePlus.png" width="165" class="d-inline-block align-top" alt="" loading="lazy">
     </div>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="#">Rastreos</a>
-      <a class="p-2 text-dark" href="#">Envíos</a>
-      <a class="p-2 text-dark" href="#">Cotización</a>
-      <a class="p-2 text-dark" href="#">Sobre nosotros</a>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Rastreos</a>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Envíos</a>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Sobre nosotros</a>
     </nav>
-    <a class="btn btn-outline-primary" href="#">Iniciar sesión</a>
+    <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
+  
   <div class="container">
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
