@@ -26,7 +26,7 @@
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Rastreos</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Envíos</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
-      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Sobre nosotros</a>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
     </nav>
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
@@ -57,6 +57,7 @@
         </div>
       </div>
       <div class="carousel-item">
+      </div>
         <img src="assets/img/avion_paqueplus.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-sm-block">
           <h5>Siempre ofreciendo servicios de calidad</h5>
@@ -93,7 +94,6 @@
       <div class="container">
       </div>
     </div>
-
   </main>
 
   <footer class="text-muted">
