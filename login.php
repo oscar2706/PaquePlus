@@ -61,9 +61,7 @@
     <p class="mt-5 mb-3 text-muted text-center">&copy; Diseñado por Oscar Patricio </p>
   </form>
   <!-- JavaScript Jquery, Bootstrap -->
-  <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   <script src="assets/js/login.js"></script>
 </body>
