@@ -1,61 +1,58 @@
 <div class="container-xl resultados_cotizacion">
   <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    setlocale(LC_ALL, "es_ES", 'Spanish_Spain', 'Spanish');
+    date_default_timezone_set('America/Mexico_City');
+    $fecha_actual = date("d-m-Y");
 
-      $cotizacion = [];
-      $cotizacion1 = [
-        'entrega_estimada' => ''
-      ];
-      // echo "Funciona!!! D:";
-      // var_dump($_POST);
-      // try {
-      //   $sql = "INSERT INTO Usuario (correo, password) VALUES (?,?)";
-      //   $stmt = $conn->prepare($sql);
-      //   if ($stmt->execute([$_POST['correo'], $_POST['contraseña']])) {
-      //     $query = $conn->prepare("SELECT idUsuario FROM Usuario 
-      //                         WHERE correo = '" . $_POST['correo'] . "' AND password  = '" . $_POST['contraseña'] . "' 
-      //                         LIMIT 1");
-      //     $query->execute();
-      //     $registro = $query->fetch(PDO::FETCH_OBJ);
-      //     var_dump($registro);
-
-      //     session_start();
-      //     $_SESSION['idUsuario'] = $registro->idUsuario;
-      //     redirigeA('cliente/principal_cliente.php');
-      //   }
-      // } catch (PDOexception $e) {
-      //   if ($e->getCode() == 23000) {
-      //     $msgError = 'Este correo ya esta registrado';
-      //   }
-      // }
-    }
-    ?>
-  <h2 class="text-center mb-5 mt-5">Sus cotizaciones</h2>
+    $cotizaciones = [
+      [
+        'entrega_estimada' => date("d-m-Y", strtotime($fecha_actual . "+" . "1 days")),
+        'precio' => 300 + (0.1 * random_int(100, 300))
+      ],
+      [
+        'entrega_estimada' => date("d-m-Y", strtotime($fecha_actual . "+" . random_int(2, 3) . " days")),
+        'precio' => 200 + (0.1 * random_int(100, 300))
+      ],
+      [
+        'entrega_estimada' => date("d-m-Y", strtotime($fecha_actual . "+" . random_int(3, 5) . " days")),
+        'precio' => 150 + (0.1 * random_int(100, 300))
+      ],
+      [
+        'entrega_estimada' => date("d-m-Y", strtotime($fecha_actual . "+" . random_int(5, 7) . " days")),
+        'precio' => 100 + (0.1 * random_int(100, 300))
+      ],
+    ];
+  }
+  ?>
+  <h2 class="text-center mb-3 mb.lg-4 mt-3">Sus cotizaciones</h2>
 
   <!-- Resultado -->
-  <div class="cotizacion shadow-sm rounded mb-4 mb-lg-5 m-3 border py-3">
-    <div class="row justify-content-center align-items-center p-3">
-      <div class="col-12 col-lg-2 text-center">
-        <img class="" src="assets/img/camion.png" width="160">
-      </div>
-      <div class="col-12 col-lg-7 text-center text-lg-left">
-        <div class="pl-0 pl-lg-3">
-          <p class="card-title text-secondary">Entrega estimada</p>
-          <h5 class="card-title">Miercoles 22 de junio
-            <span class="card-title text-secondary">| Antes de las 12:00</span>
-          </h5>
-          <p class="card-text text-secondary font-italic">Reserve hoy antes de las 15:00 para poder procesar el envío</p>
+  <?php foreach ($cotizaciones as $cotizacion) : ?>
+    <div class="cotizacion shadow-sm rounded mb-3 mb-lg-4 m-3 border py-1 py-lg-3">
+      <div class="row justify-content-center align-items-center p-3">
+        <div class="col-12 col-lg-2 text-center">
+          <img class="" src="assets/img/camion.png" width="160">
+        </div>
+        <div class="col-12 col-lg-7 text-center text-lg-left">
+          <div class="pl-0 pl-lg-3">
+            <p class="card-title text-secondary">Entrega estimada</p>
+            <h5 class="card-title"><?php echo $cotizacion['entrega_estimada'] ?>
+              <span class="card-title text-secondary">| Antes de las 12:00</span>
+            </h5>
+            <p class="card-text text-secondary font-italic">Reserve hoy antes de las 15:00 para poder procesar el envío</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 text-center pr-xl-5 p-3">
+          <p class="text-primary m-0 pb-1 pb-lg-2">
+            <span class="text-secondary"><small>Incluye iva</small></span>
+            MXN <?php echo $cotizacion['precio'] ?>
+          </p>
+          <button class="btn-continuar btn btn-block btn-primary">Continuar a envío</button>
         </div>
       </div>
-      <div class="col-12 col-lg-3 text-center pr-xl-5 p-3">
-        <p class="text-primary m-0 pb-1 pb-lg-2">
-          <span class="text-secondary"><small>Incluye iva</small></span>
-          MXN 100.00
-        </p>
-        <button class="btn-continuar btn btn-block btn-primary">Continuar a envío</button>
-      </div>
     </div>
-  </div>
+  <?php endforeach; ?>
 
 </div>
 
