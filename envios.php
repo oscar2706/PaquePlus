@@ -10,7 +10,7 @@
   <link href="assets/scss/styles.css" rel="stylesheet">
   <link href="assets/css/envios.css" rel="stylesheet">
 
-  <title>PaquePlus - Iniciar sesión</title>
+  <title>Envíos</title>
 </head>
 
 <body>
@@ -28,13 +28,25 @@
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
 
-  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Pricing</h1>
-    <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example.
-      It’s built with default Bootstrap components and utilities with little customization.</p>
+  <div class="text-center mt-3 mt-lg-4">
+    <h1 class="display-4">Envíos</h1>
+  </div>
+  
+  <div class="container-xl mt-3 mt-lg-4 mb-4 mb-lg-4 bg-light rounded">
+    <div class="row align-align-items-center">
+      <div class="col-12 col-lg-6">
+        <img src="assets/img/recibe_paquete2.png" class="img-fluid float-left" width="500">
+      </div>
+      <div class="col-12 col-lg-6 my-auto px-5">
+        <h1 class="display-5">Entregando calidad</h1>
+        <p class="lead">Envía y recibe paquetería con nosotros, contamos con la mejor atención al cliente y ofrecemos servicios de primera calidad.</p>
+        <a href="nuevo_envio.php" class="btn btn-block btn-primary text-white">Realiza un envío</a>
+      </div>
+    </div>
   </div>
 
-  <div class="container">
+  <!-- Precios -->
+  <!-- <div class="container">
     <div class="card-deck mb-3 text-center">
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
@@ -120,10 +132,10 @@
         </div>
       </div>
     </footer>
-  </div>
+  </div> -->
 
   <!-- Archivos JavaScript -->
-  <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 

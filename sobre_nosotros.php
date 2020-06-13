@@ -100,7 +100,7 @@
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   <script>
     var google_map; // objeto gGMaps 
-    var geocoder; // objeto Geocoder 
+    // var geocoder; // objeto Geocoder 
     var dirn; // objeto DirectionsService 
     var dir_disp; // objeto DirectionsRenderer
 
@@ -111,7 +111,7 @@
       google_map = new google.maps.Map(document.getElementById("map"));
 
       // creación del geocoder
-      geocoder = new google.maps.Geocoder();
+      // geocoder = new google.maps.Geocoder();
 
       // para el cálculo de las distancias
       dirn = new google.maps.DirectionsService();

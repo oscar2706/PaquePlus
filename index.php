@@ -24,7 +24,7 @@
     </div>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Rastreos</a>
-      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Envíos</a>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="envios.php">Envíos</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
     </nav>
