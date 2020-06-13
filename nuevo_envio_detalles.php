@@ -31,72 +31,30 @@
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
 
-  <form id="form-cotizacion">
-    <h1 class="text-center my-3">Cotización</h1>
-
-    <!-- Origen, destino, peso -->
-    <div class="container-md mt-3">
-      <div class="row justify-content-around">
-
-        <!-- Origen -->
-        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-5 mt-lg-3">
-          <h4 class="text-center mb-3">Origen</h4>
+  <!-- Formulario -->
+  <form id="form-datos-paquete">
+    <!-- Contenido, valor, peso -->
+    <div class="container-xl">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+          <h1 class="text-center my-3">Datos paquete</h1>
           <hr>
-          <div class="px-4 px-sm-3 px-lg-5">
-            <select id="select_ciudad_origen" class="form-control mb-3" required>
-              <option selected disabled value="">Ciudad de origen</option>
-              <option value="Tulancingo">Tulancingo</option>
-              <option value="Ciudad de méxico">Ciudad de méxico</option>
-              <option value="Toluca">Toluca</option>
-              <option value="Monterrey">Monterrey</option>
-              <option value="Guadalajara">Guadalajara</option>
-              <option value="Puebla">Puebla</option>
-              <option value="Oaxaca">Oaxaca</option>
-              <option value="Chihuahua">Chihuahua</option>
-              <option value="León">León</option>
-              <option value="Ciudad Juárez">Ciudad Juárez</option>
-            </select>
-            <div class="form-label-group">
-              <input type="text" name="codigo_postal_origen" id="codigo_postal_origen" class="form-control" placeholder="Código postal" required autofocus>
-              <label for="codigo_postal">Código postal</label>
-            </div>
-          </div>
-        </div>
-
-        <!-- Destino -->
-        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-5 mt-lg-3">
-          <h4 class="text-center mb-3">Destino</h4>
-          <hr>
-          <div class="px-4 px-sm-3 px-lg-5">
-            <select id="select_ciudad_destino" class="form-control mb-3" required>
-              <option selected disabled value="">Ciudad destino</option>
-              <option value="Tulancingo">Tulancingo</option>
-              <option value="Ciudad de méxico">Ciudad de méxico</option>
-              <option value="Toluca">Toluca</option>
-              <option value="Monterrey">Monterrey</option>
-              <option value="Guadalajara">Guadalajara</option>
-              <option value="Puebla">Puebla</option>
-              <option value="Oaxaca">Oaxaca</option>
-              <option value="Chihuahua">Chihuahua</option>
-              <option value="León">León</option>
-              <option value="Ciudad Juárez">Ciudad Juárez</option>
-            </select>
-            <div class="form-label-group">
-              <input type="text" name="codigo_postal_destino" id="codigo_postal_destino" class="form-control" placeholder="Código postal" required autofocus>
-              <label for="codigo_postal">Código postal</label>
-            </div>
-          </div>
         </div>
       </div>
-
       <!-- Peso -->
       <div class="row justify-content-center">
         <div class="col-12 col-sm-9 col-md-9 col-lg-7 col-xl-6 mt-lg-3">
-          <h4 class="text-center mb-3">Paquete</h4>
-          <hr>
           <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
             <div class="form-label-group">
-              <input type="number" id="peso" name="peso" class="form-control" placeholder="Peso(Kg)" required autofocus>
+              <input type="number" id="contenido" name="contenido" class="form-control" placeholder="Contenido" required autofocus>
+              <label for="contenido">Contenido</label>
+            </div>
+            <div class="form-label-group">
+              <input type="number" id="valor" name="valor" class="form-control" placeholder="Valor(MXN)" required>
+              <label for="valor">Valor(MXN)</label>
+            </div>
+            <div class="form-label-group mt-5">
+              <input type="number" id="peso" name="peso" class="form-control" placeholder="Peso(Kg)" required>
               <label for="peso">Peso(Kg)</label>
             </div>
           </div>
@@ -166,21 +124,25 @@
           </div>
         </div>
 
-        <div class="col-12 mt-2">
-          <div class="text-center mb-4">
-            <button id="btn_solicita_cotizacion" class="btn btn-primary btn-lg">Solicitar cotización</button>
+      </div>
+    </div>
+
+    <!-- Boton continuar -->
+    <div class="container-md">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 mt-lg-3">
+          <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
+            <a href="nuevo_envio_detalles.php" class="btn btn-primary btn-block text-white">Continuar</a>
           </div>
         </div>
       </div>
     </div>
-
   </form>
 
   <!-- JavaScript Jquery, Bootstrap -->
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-  <script src="assets/js/cotizacion.js"></script>
-  
+  <script src="assets/js/envio_detalles_paquete.js"></script>
 </body>
 
 </html>

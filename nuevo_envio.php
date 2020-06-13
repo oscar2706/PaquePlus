@@ -31,7 +31,7 @@
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
 
-  <form id="form-cotizacion" novalidate>
+  <form id="form-direcciones" novalidate>
     <h1 class="text-center my-3">Nuevo envío</h1>
 
     <!-- Origen, destino -->
@@ -125,11 +125,11 @@
         </div>
       </div>
 
-      <!-- Peso -->
+      <!-- Continuar -->
       <div class="row justify-content-center">
-        <div class="col-12 col-sm-9 col-md-9 col-lg-7 col-xl-6 mt-lg-3">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 mt-lg-3">
           <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
-            <button class="btn btn-primary btn-block">Continuar</button>
+            <a href="nuevo_envio_detalles.php" class="btn btn-primary btn-block text-white">Continuar</a>
           </div>
         </div>
       </div>
@@ -141,7 +141,6 @@
   <!-- JavaScript Jquery, Bootstrap -->
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-  </script>
 </body>
 
 </html>
