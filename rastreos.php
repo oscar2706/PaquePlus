@@ -74,8 +74,6 @@
     </div>
   </div>
 
-
-
   <!-- Archivos JavaScript -->
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

@@ -74,35 +74,11 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  </div>
 
-  <main role="main">
-
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1>Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
-          etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
-      </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-      <div class="container">
-      </div>
-    </div>
-  </main>
-
-  <footer class="text-muted">
+  <footer class="text-muted mt-4">
     <div class="container">
-      <p class="float-right">
-        <a href="#">Back to top</a>
-      </p>
-      <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-      <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+      <p class="m-0">&copy; 2020 PaquePlus, Inc.</p>
+      <p>Diseñado por Oscar Patricio Hernández para la materia de Servicios Web</p>
     </div>
   </footer>
 
