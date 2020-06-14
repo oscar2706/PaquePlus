@@ -20,10 +20,10 @@
   <!-- Barra de navegación -->
   <div class="d-flex flex-column flex-md-row align-items-center py-3 py-lg-1 px-0 px-md-4 bg-white border-bottom shadow-sm">
     <div class="my-0 mr-md-auto font-weight-normal">
-      <img src="assets/img/paquePlus.png" width="165" class="d-inline-block align-top" alt="" loading="lazy">
+      <a href="index.php"><img src="assets/img/paquePlus.png" width="165" class="d-inline-block align-top" loading="lazy"></a>
     </div>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="#">Rastreos</a>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="rastreos.php">Rastreos</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="envios.php">Envíos</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
@@ -43,7 +43,7 @@
         <img src="assets/img/recibe_paquete3.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-sm-block">
           <h5>Tú eres nuestra prioridad</h5>
-          <p>En PaquePlus nuestra meta es brindarte el mejor servicio posible. 
+          <p>En PaquePlus nuestra meta es brindarte el mejor servicio posible.
             Por esto ofrecemos los mejores servicios de paqueteria.</p>
         </div>
       </div>
@@ -51,7 +51,7 @@
         <img src="assets/img/call_center.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-sm-block">
           <h5>¿Tienes alguna duda? Contactanos</h5>
-          <p>En PaquePlus nuestros clientes son lo más importante. Por este motivo ofrecemos atención al cliente 
+          <p>En PaquePlus nuestros clientes son lo más importante. Por este motivo ofrecemos atención al cliente
             24 horas los 7 días de la semana. Contactanos al (775)-141-99-32
           </p>
         </div>
@@ -60,10 +60,9 @@
         <img src="assets/img/avion_paqueplus.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-sm-block">
           <h5>Siempre ofreciendo servicios de calidad</h5>
-          <p>Como una empresa inovadora en PaquePlus siempre estamos buscando más y mejores formas de cumplir nuestra misión. 
+          <p>Como una empresa inovadora en PaquePlus siempre estamos buscando más y mejores formas de cumplir nuestra misión.
             Brindarte la mejor atención y los mejores servicios.</p>
         </div>
-      </div>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -74,6 +73,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+  </div>
   </div>
 
   <main role="main">
@@ -102,8 +102,7 @@
         <a href="#">Back to top</a>
       </p>
       <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-      <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a
-          href="../getting-started/introduction/">getting started guide</a>.</p>
+      <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
     </div>
   </footer>
 

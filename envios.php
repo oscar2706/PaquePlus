@@ -34,10 +34,10 @@
   
   <div class="container-xl mt-3 mt-lg-4 mb-4 mb-lg-4 bg-light rounded">
     <div class="row align-align-items-center">
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-5 p-0">
         <img src="assets/img/recibe_paquete2.png" class="img-fluid float-left" width="500">
       </div>
-      <div class="col-12 col-lg-6 my-auto px-5">
+      <div class="col-12 col-lg-7 my-auto px-5">
         <h1 class="display-5">Entregando calidad</h1>
         <p class="lead">Envía y recibe paquetería con nosotros, contamos con la mejor atención al cliente y ofrecemos servicios de primera calidad.</p>
         <a href="nuevo_envio.php" class="btn btn-block btn-primary text-white">Realiza un envío</a>
