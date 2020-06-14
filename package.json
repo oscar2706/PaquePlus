@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/oscar2706/PaquePlus#readme",
   "dependencies": {
-    "bootstrap": "^4.5.0"
+    "bootstrap": "^4.5.0",
+    "sweetalert2": "^9.15.1"
   }
 }

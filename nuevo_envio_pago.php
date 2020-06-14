@@ -21,8 +21,6 @@
   <link href="assets/scss/styles.css" rel="stylesheet">
   <link href="assets/css/floating-labels.css" rel="stylesheet">
 
-  <!-- PayPal -->
-  <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
   <title>Cotización</title>
 </head>
 
@@ -41,8 +39,8 @@
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
 
-  <form id="form-pago" method="POST">
-    <h1 class="text-center my-3">Pago</h1>
+  <form id="form-pago">
+    <h1 class="text-center my-3">Verificación de envío</h1>
     <p class="text-center text-secondary h5 font-weight-light mt-3 mb-4">Por favor verifique que todos los datos sean correctos antes de pagar.</p>
     <!-- Origen, destino, Paquete -->
     <div class="container-fluid">
@@ -53,13 +51,13 @@
           <h4 class="text-center mb-3">Origen</h4>
           <hr>
           <div class="px-4 px-sm-3 px-lg-5">
-            <p><strong>Nombre:</strong> <?php echo $_SESSION['direcciones']['origen_nombre'] ?></p>
-            <p><strong>Empresa:</strong> <?php echo $_SESSION['direcciones']['origen_empresa'] ?></p>
-            <p><strong>Dirección:</strong> <?php echo $_SESSION['direcciones']['origen_direccion'] ?></p>
-            <p><strong>Código postal:</strong> <?php echo $_SESSION['direcciones']['origen_codigo_postal'] ?></p>
-            <p><strong>Ciudad de origen:</strong> <?php echo $_SESSION['direcciones']['origen_ciudad'] ?></p>
-            <p><strong>Correo electronico:</strong> <?php echo $_SESSION['direcciones']['origen_correo'] ?></p>
-            <p><strong>Número de contacto:</strong> <?php echo $_SESSION['direcciones']['origen_numero'] ?></p>
+            <p><strong>Nombre: </strong> <?php echo $_SESSION['direcciones']['origen_nombre'] ?></p>
+            <p><strong>Empresa: </strong> <?php echo $_SESSION['direcciones']['origen_empresa'] ?></p>
+            <p><strong>Dirección: </strong> <?php echo $_SESSION['direcciones']['origen_direccion'] ?></p>
+            <p><strong>Código postal: </strong> <?php echo $_SESSION['direcciones']['origen_codigo_postal'] ?></p>
+            <p><strong>Ciudad de origen: </strong> <?php echo $_SESSION['direcciones']['origen_ciudad'] ?></p>
+            <p><strong>Correo electronico: </strong> <?php echo $_SESSION['direcciones']['origen_correo'] ?></p>
+            <p><strong>Número de contacto: </strong> <?php echo $_SESSION['direcciones']['origen_numero'] ?></p>
           </div>
         </div>
 
@@ -68,12 +66,12 @@
           <h4 class="text-center mb-3">Destino</h4>
           <hr>
           <div class="px-4 px-sm-3 px-lg-5">
-            <p><strong>Nombre:</strong> <?php echo $_SESSION['direcciones']['destino_nombre'] ?></p>
-            <p><strong>Empresa:</strong> <?php echo $_SESSION['direcciones']['destino_empresa'] ?></p>
-            <p><strong>Dirección:</strong> <?php echo $_SESSION['direcciones']['destino_direccion'] ?></p>
-            <p><strong>Código postal:</strong> <?php echo $_SESSION['direcciones']['destino_codigo_postal'] ?></p>
-            <p><strong>Ciudad de origen:</strong> <?php echo $_SESSION['direcciones']['destino_ciudad'] ?></p>
-            <p><strong>Número de contacto:</strong> <?php echo $_SESSION['direcciones']['destino_numero'] ?></p>
+            <p><strong>Nombre: </strong> <?php echo $_SESSION['direcciones']['destino_nombre'] ?></p>
+            <p><strong>Empresa: </strong> <?php echo $_SESSION['direcciones']['destino_empresa'] ?></p>
+            <p><strong>Dirección: </strong> <?php echo $_SESSION['direcciones']['destino_direccion'] ?></p>
+            <p><strong>Código postal: </strong> <?php echo $_SESSION['direcciones']['destino_codigo_postal'] ?></p>
+            <p><strong>Ciudad de origen: </strong> <?php echo $_SESSION['direcciones']['destino_ciudad'] ?></p>
+            <p><strong>Número de contacto: </strong> <?php echo $_SESSION['direcciones']['destino_numero'] ?></p>
           </div>
         </div>
 
@@ -82,22 +80,23 @@
           <h4 class="text-center mb-3">Paquete</h4>
           <hr>
           <div class="px-4 px-sm-3 px-lg-5">
-            <p><strong>Contenido:</strong><?php echo $_SESSION['paquete']['contenido'] ?></p>
-            <p><strong>Valor:</strong><?php echo $_SESSION['paquete']['valor'] ?></p>
-            <p><strong>Tipo de envío:</strong><?php echo $_SESSION['paquete']['tipo_envio'] ?></p>
-            <p><strong>Peso:</strong><?php echo $_SESSION['paquete']['peso'] ?></p>
-            <p><strong>Tamaño:</strong><?php echo $_SESSION['paquete']['tamaño'] ?></p>
+            <p><strong>Contenido: </strong><?php echo $_SESSION['paquete']['contenido'] ?></p>
+            <p><strong>Valor(MXN): </strong>$<?php echo $_SESSION['paquete']['valor'] ?></p>
+            <p><strong>Tipo de envío: </strong><?php echo $_SESSION['paquete']['tipo_envio'] ?></p>
+            <p><strong>Peso(Kg): </strong><?php echo $_SESSION['paquete']['peso'] ?></p>
+            <p><strong>Tamaño: </strong><?php echo $_SESSION['paquete']['tamaño'] ?></p>
           </div>
         </div>
 
       </div>
 
       <!-- Pagar -->
-      <div class="row justify-content-center mt-5">
+      <div class="row justify-content-center mb-5">
         <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-4 mt-lg-3">
-          <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
+          <div class="px-4 px-sm-3 px-lg-5 mx-lg-3 text-center">
+            <h4 class="text-primary mb-3">Total(MXN) <span class="pl-3">$350 MXN</span></h4>
             <div id="paypal-button-container"></div>
-            <button type="submit" class="btn btn-primary btn-block text-white">Pagar</button>
+            <a href="cobro.php" class="btn btn-primary btn-block text-white">Continuar al pago</a>
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@
       <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-4">
         <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
           <div id="paypal-button-container"></div>
-          <a href="index.php" class="btn btn-primary btn-block text-white">Regresar al inicio</a>
+          <a href="index.php" class="btn btn-lg btn-block btn-primary text-white">Regresar al inicio</a>
         </div>
       </div>
     </div>
