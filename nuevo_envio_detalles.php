@@ -2,9 +2,9 @@
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     session_start();
     echo "Petición POST";
+    echo '<br>';
+    var_dump($_POST);
     $_SESSION['paquete'] = $_POST;
-    $host = $_SERVER['HTTP_HOST'];
-    header("Location: http://$host/PaquePlus/nuevo_envio_pago.php");
   }
 ?>
 <!doctype html>
@@ -76,7 +76,7 @@
         <!-- Chico -->
         <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 mb-3">
           <div class="card ">
-            <div id="tamaño_xs" class="card-horizontal">
+            <div id="extra_chico" class="card-horizontal">
               <div class="img-square-wrapper ">
                 <img class="img-fluid" src="assets/img/paquete-xs.png" width="100">
               </div>
@@ -90,7 +90,7 @@
         <!-- Mediando -->
         <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 mb-3">
           <div class="card ">
-            <div id="tamaño_sm" class="card-horizontal">
+            <div id="chico" class="card-horizontal">
               <div class="img-square-wrapper ">
                 <img class="img-fluid" src="assets/img/paquete-sm.png" width="100">
               </div>
@@ -104,7 +104,7 @@
         <!-- Grande -->
         <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 mb-3">
           <div class="card ">
-            <div id="tamaño_md" class="card-horizontal">
+            <div id="mediano" class="card-horizontal">
               <div class="img-square-wrapper ">
                 <img class="img-fluid" src="assets/img/paquete-md.png" width="100">
               </div>
@@ -118,7 +118,7 @@
         <!-- Extra grande-->
         <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 mb-3">
           <div class="card ">
-            <div id="tamaño_lg" class="card-horizontal">
+            <div id="grande" class="card-horizontal">
               <div class="img-square-wrapper ">
                 <img class="img-fluid" src="assets/img/paquete-lg.png" width="100">
               </div>

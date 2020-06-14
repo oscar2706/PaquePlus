@@ -85,7 +85,7 @@
             <p><strong>Contenido:</strong><?php echo $_SESSION['paquete']['contenido'] ?></p>
             <p><strong>Valor:</strong><?php echo $_SESSION['paquete']['valor'] ?></p>
             <p><strong>Peso:</strong><?php echo $_SESSION['paquete']['peso'] ?></p>
-            <p><strong>Tamaño:</strong><?php echo 'mediano' ?></p>
+            <p><strong>Tamaño:</strong><?php echo $_SESSION['paquete']['tamaño'] ?></p>
           </div>
         </div>
 

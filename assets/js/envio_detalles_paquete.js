@@ -8,4 +8,34 @@ $(document).ready(function () {
     $('.card-horizontal').css('cursor', 'pointer');
   })
 
+  $('#form-datos-paquete').on('submit', function (event) {
+    event.preventDefault();
+
+    if ($('.card-horizontal').hasClass('selected')) {
+      var contenido = $('#contenido').val();
+      var valor = $('#valor').val();
+      var peso = $('#peso').val();
+      var tamaño = $('.card-horizontal.selected');
+
+      $.ajax({
+        url: 'nuevo_envio_detalles.php',
+        type: 'POST',
+        data: {
+          "contenido": contenido,
+          "valor": valor,
+          "peso": peso,
+          "tamaño": tamaño.attr('id')
+        },
+        success: function (response) {
+          console.log('Se proceso con AJAX');
+          console.log($('.resultados_cotizacion'));
+          window.location.href = "nuevo_envio_pago.php";
+        }
+      })
+
+    } else {
+      alert('Selecciona un tamaño');
+    }
+  })
+
 });
