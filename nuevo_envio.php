@@ -105,7 +105,7 @@
               <label for="destino_codigo_postal">Código postal</label>
             </div>
             <select id="destino_select_ciudad" class="form-control mb-3" required>
-              <option selected disabled value="">Ciudad de origen</option>
+              <option selected disabled value="">Ciudad destino</option>
               <option value="Tulancingo">Tulancingo, Hidalgo</option>
               <option value="Ciudad de méxico">Ciudad de méxico</option>
               <option value="Toluca">Toluca, Estado de México</option>

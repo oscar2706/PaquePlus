@@ -31,7 +31,7 @@
   <div class="text-center mt-3 mt-lg-4">
     <h1 class="display-4">Envíos</h1>
   </div>
-  
+
   <div class="container-xl mt-3 mt-lg-4 mb-4 mb-lg-4 bg-light rounded">
     <div class="row align-align-items-center">
       <div class="col-12 col-lg-5 p-0">
@@ -40,7 +40,31 @@
       <div class="col-12 col-lg-7 my-auto px-5">
         <h1 class="display-5">Entregando calidad</h1>
         <p class="lead">Envía y recibe paquetería con nosotros, contamos con la mejor atención al cliente y ofrecemos servicios de primera calidad.</p>
-        <a href="nuevo_envio.php" class="btn btn-block btn-primary text-white">Realiza un envío</a>
+        <!-- Boton modal rastero -->
+        <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#rastreo_Modal">
+          Solicitar un envío
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="rastreo_Modal" tabindex="-1" role="dialog" aria-labelledby="rastreo_ModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="rastreo_ModalLabel">Solicitar envío</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p class="m-0">¿Deseas realizar un envío rápido sin tener cuenta?</p>
+                <a href="nuevo_envio.php" class="btn btn-primary text-white mb-3">Continuar como invitado</a>
+                <p class="m-0">¿Eres un usuario registrado?</p>
+                <a href="login.php" class="btn btn-primary text-white mb-3">Inicar sesión</a>
+                <p class="m-0">¿Aún no tienes cuenta con nosotros?</p>
+                <a href="registro.php" class="btn btn-primary text-white mb-3">Registrarme</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
