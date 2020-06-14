@@ -1,5 +1,11 @@
 <?php
-
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    session_start();
+    echo "Petición POST";
+    $_SESSION['paquete'] = $_POST;
+    $host = $_SERVER['HTTP_HOST'];
+    header("Location: http://$host/PaquePlus/nuevo_envio_pago.php");
+  }
 ?>
 <!doctype html>
 <html lang="es_MX">
@@ -32,7 +38,7 @@
   </div>
 
   <!-- Formulario -->
-  <form id="form-datos-paquete">
+  <form id="form-datos-paquete" method="POST">
     <!-- Contenido, valor, peso -->
     <div class="container-xl">
       <div class="row justify-content-center">
@@ -46,7 +52,7 @@
         <div class="col-12 col-sm-9 col-md-9 col-lg-7 col-xl-6 mt-lg-3">
           <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
             <div class="form-label-group">
-              <input type="number" id="contenido" name="contenido" class="form-control" placeholder="Contenido" required autofocus>
+              <input type="text" id="contenido" name="contenido" class="form-control" placeholder="Contenido" required autofocus>
               <label for="contenido">Contenido</label>
             </div>
             <div class="form-label-group">
@@ -132,7 +138,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 mt-lg-3">
           <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
-            <a href="nuevo_envio_pago.php" class="btn btn-primary btn-block text-white">Continuar</a>
+            <button type="submit" class="btn btn-primary btn-block text-white">Continuar</button>
           </div>
         </div>
       </div>

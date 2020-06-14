@@ -1,5 +1,11 @@
 <?php
-
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    session_start();
+    echo "Petición POST";
+    $_SESSION['direcciones'] = $_POST;
+    $host = $_SERVER['HTTP_HOST'];
+    header("Location: http://$host/PaquePlus/nuevo_envio_detalles.php");
+  }
 ?>
 <!doctype html>
 <html lang="es_MX">
@@ -31,7 +37,7 @@
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
 
-  <form id="form-direcciones" novalidate>
+  <form id="form-direcciones" method="POST" novalidate>
     <h1 class="text-center my-3">Nuevo envío</h1>
 
     <!-- Origen, destino -->
@@ -59,7 +65,7 @@
               <input type="number" name="origen_codigo_postal" id="origen_codigo_postal" class="form-control" placeholder="Código postal" required>
               <label for="origen_codigo_postal">Código postal</label>
             </div>
-            <select id="origen_select_ciudad" class="form-control mb-3" required>
+            <select id="origen_select_ciudad" name="origen_ciudad" class="form-control mb-3" required>
               <option selected disabled value="">Ciudad de origen</option>
               <option value="Tulancingo">Tulancingo, Hidalgo</option>
               <option value="Ciudad de méxico">Ciudad de méxico</option>
@@ -104,7 +110,7 @@
               <input type="number" name="destino_codigo_postal" id="destino_codigo_postal" class="form-control" placeholder="Código postal" required>
               <label for="destino_codigo_postal">Código postal</label>
             </div>
-            <select id="destino_select_ciudad" class="form-control mb-3" required>
+            <select id="destino_select_ciudad" name="destino_ciudad" class="form-control mb-3" required>
               <option selected disabled value="">Ciudad destino</option>
               <option value="Tulancingo">Tulancingo, Hidalgo</option>
               <option value="Ciudad de méxico">Ciudad de méxico</option>
@@ -129,7 +135,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 mt-lg-3">
           <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
-            <a href="nuevo_envio_detalles.php" class="btn btn-primary btn-block text-white">Continuar</a>
+            <button type="submit" class="btn btn-primary btn-block text-white">Continuar</button>
           </div>
         </div>
       </div>
