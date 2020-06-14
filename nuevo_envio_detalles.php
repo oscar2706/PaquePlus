@@ -59,7 +59,14 @@
               <input type="number" id="valor" name="valor" class="form-control" placeholder="Valor(MXN)" required>
               <label for="valor">Valor(MXN)</label>
             </div>
-            <div class="form-label-group mt-5">
+            <select id="tipo_envio" name="tipo_envio" class="form-control mt-5 mb-3" required>
+              <option selected disabled value="">Tipo de envío</option>
+              <option value="Tortuga">Tortuga (5-7 días hábiles)</option>
+              <option value="Normal">Normal (3-5 días hábiles)</option>
+              <option value="Preferente">Preferente (2-3 días hábiles)</option>
+              <option value="Paloma">Paloma (día siguiente)</option>
+            </select>
+            <div class="form-label-group">
               <input type="number" id="peso" name="peso" class="form-control" placeholder="Peso(Kg)" required>
               <label for="peso">Peso(Kg)</label>
             </div>

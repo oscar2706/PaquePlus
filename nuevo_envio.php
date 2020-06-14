@@ -37,7 +37,7 @@
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
 
-  <form id="form-direcciones" method="POST" novalidate>
+  <form id="form-direcciones" method="POST">
     <h1 class="text-center my-3">Nuevo envío</h1>
 
     <!-- Origen, destino -->

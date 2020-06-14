@@ -14,6 +14,7 @@ $(document).ready(function () {
     if ($('.card-horizontal').hasClass('selected')) {
       var contenido = $('#contenido').val();
       var valor = $('#valor').val();
+      var tipo_envio = $('#tipo_envio').val();
       var peso = $('#peso').val();
       var tamaño = $('.card-horizontal.selected');
 
@@ -23,6 +24,7 @@ $(document).ready(function () {
         data: {
           "contenido": contenido,
           "valor": valor,
+          "tipo_envio": tipo_envio,
           "peso": peso,
           "tamaño": tamaño.attr('id')
         },

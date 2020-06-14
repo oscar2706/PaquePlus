@@ -41,7 +41,7 @@
     <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
   </div>
 
-  <form id="form-direcciones" method="POST" novalidate>
+  <form id="form-pago" method="POST">
     <h1 class="text-center my-3">Pago</h1>
     <p class="text-center text-secondary h5 font-weight-light mt-3 mb-4">Por favor verifique que todos los datos sean correctos antes de pagar.</p>
     <!-- Origen, destino, Paquete -->
@@ -84,6 +84,7 @@
           <div class="px-4 px-sm-3 px-lg-5">
             <p><strong>Contenido:</strong><?php echo $_SESSION['paquete']['contenido'] ?></p>
             <p><strong>Valor:</strong><?php echo $_SESSION['paquete']['valor'] ?></p>
+            <p><strong>Tipo de envío:</strong><?php echo $_SESSION['paquete']['tipo_envio'] ?></p>
             <p><strong>Peso:</strong><?php echo $_SESSION['paquete']['peso'] ?></p>
             <p><strong>Tamaño:</strong><?php echo $_SESSION['paquete']['tamaño'] ?></p>
           </div>
