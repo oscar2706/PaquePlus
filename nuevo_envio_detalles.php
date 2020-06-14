@@ -132,7 +132,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 mt-lg-3">
           <div class="px-4 px-sm-3 px-lg-5 mx-lg-3">
-            <a href="nuevo_envio_detalles.php" class="btn btn-primary btn-block text-white">Continuar</a>
+            <a href="nuevo_envio_pago.php" class="btn btn-primary btn-block text-white">Continuar</a>
           </div>
         </div>
       </div>

@@ -57,13 +57,13 @@
         </div>
       </div>
       <div class="carousel-item">
-      </div>
         <img src="assets/img/avion_paqueplus.png" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-sm-block">
           <h5>Siempre ofreciendo servicios de calidad</h5>
           <p>Como una empresa inovadora en PaquePlus siempre estamos buscando más y mejores formas de cumplir nuestra misión. 
             Brindarte la mejor atención y los mejores servicios.</p>
         </div>
+      </div>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -108,7 +108,7 @@
   </footer>
 
   <!-- JavaScript Jquery, Bootstrap -->
-  <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 
