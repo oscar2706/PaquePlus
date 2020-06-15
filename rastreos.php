@@ -29,12 +29,12 @@ session_start();
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
     </nav>
-    <?php if(isset($_SESSION['idUsuario'])): ?>
+    <?php if (isset($_SESSION['idUsuario'])) : ?>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cliente/principal_cliente.php">Mi cuenta</a>
       <form action="controller/logout.php">
         <button type="submit" class="btn btn-outline-primary">Cerrar sesión</button>
       </form>
-    <?php else: ?>
+    <?php else : ?>
       <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
     <?php endif; ?>
   </div>
@@ -42,6 +42,23 @@ session_start();
   <div class="text-center mt-3 mt-lg-4">
     <h1 class="display-4">Rastreos</h1>
   </div>
+
+  <!-- Alerta aun no registras todos tus datos -->
+  <?php if (isset($_SESSION['msg_error'])) : ?>
+    <div class="container">
+      <div class="row justify-content-center mt-3">
+        <div class="col-12 col-md-9 col-lg-6 text-center">
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <?php echo $_SESSION['msg_error'] ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php unset($_SESSION['msg_error']) ?>
+  <?php endif; ?>
 
   <div class="container mt-3 mt-lg-4 mb-4 mb-lg-4">
     <div class="row align-align-items-center bg-light rounded">
@@ -67,7 +84,7 @@ session_start();
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="rastrear_envio.php" method="GET">
+          <form action="controller/verifica_guia_rastreo.php" method="GET">
             <div class="modal-body">
               <div class="form-label-group">
                 <input type="number" name="guia_rastreo" id="guia_rastreo" class="form-control" placeholder="Guia de rastreo" required autofocus>
