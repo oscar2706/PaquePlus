@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 <!doctype html>
 <html lang="es_MX">
@@ -27,17 +27,36 @@
   <h1 class="text-center mt-3">Empleado</h1>
   <div class="container mt-3 mt-lg-4">
 
-    <!-- Alerta mensaje -->
-    <!-- <div class="row justify-content-center">
-      <div class="col-12 col-md-9 col-lg-6">
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          El número de envío 1234567 no existe!
+    <!-- Mensaje error -->
+    <?php if (isset($_SESSION['msg_error'])) : ?>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-6 text-center">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <?php echo $_SESSION['msg_error'] ?>
+          </div>
         </div>
       </div>
-    </div> -->
+      <?php unset($_SESSION['msg_error']) ?>
+    <?php endif; ?>
+
+    <!-- Mensaje exito -->
+    <?php if (isset($_SESSION['msg_success'])) : ?>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-6 text-center">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            Se proceso el envío, la guia de rastreo es: <strong><?php echo $_SESSION['guia_rastreo'] ?></strong>
+          </div>
+        </div>
+      </div>
+      <?php unset($_SESSION['msg_success']) ?>
+      <?php unset($_SESSION['guia_rastreo']) ?>
+    <?php endif; ?>
 
     <!-- Menú -->
     <div class="row justify-content-center">
@@ -46,7 +65,7 @@
           <div class="card-body">
             <h5 class="card-title">Nuevo envío</h5>
             <p class="card-text">Realiza nuevos encvíos para clientes de forma presencial</p>
-            <a href="#" class="btn btn-primary">Realizar envío</a>
+            <a href="../nuevo_envio.php" class="btn btn-primary">Realizar envío</a>
           </div>
         </div>
       </div>
@@ -55,7 +74,7 @@
           <div class="card-body">
             <h5 class="card-title">Cotización</h5>
             <p class="card-text">Realiza una cotización rápida de un envío.</p>
-            <a href="#" class="btn btn-primary">Cotizar un envío</a>
+            <a href="../cotizacion.php" class="btn btn-primary">Cotizar un envío</a>
           </div>
         </div>
       </div>
@@ -71,24 +90,24 @@
           </div>
 
           <!-- Modal Procesar envio-->
-          <div class="modal fade" id="rastreo_Modal" tabindex="-1" role="dialog" aria-labelledby="rastreo_ModalLabel" aria-hidden="true">
+          <div class="modal fade" id="rastreo_Modal" tabindex="-1" role="dialog" aria-labelledby="procesarEnvio_Modal" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="rastreo_ModalLabel">Rastrear envío</h5>
+                  <h5 class="modal-title" id="procesarEnvio_Modal">Procesar un envío</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form action="rastrear_envio.php" method="GET">
+                <form action="../controller/procesa_envio.php" method="GET">
                   <div class="modal-body">
                     <div class="form-label-group">
-                      <input type="number" name="guia_rastreo" id="guia_rastreo" class="form-control" placeholder="Guia de rastreo" required autofocus>
-                      <label for="guia_rastreo">Guia de rastreo</label>
+                      <input type="number" name="numero_envio" id="numero_envio" class="form-control" placeholder="Número de envio" required autofocus>
+                      <label for="numero_envio">Número de envío</label>
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button id="btn-" type="submit" class="btn btn-primary" data-dismiss="modal">Procesar</button>
+                    <button id="btn-procesar" type="submit" class="btn btn-primary">Procesar</button>
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
                   </div>
                 </form>
@@ -111,9 +130,6 @@
   <!-- JavaScript Jquery, Bootstrap -->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-  <script>
-
-  </script>
 </body>
 
 </html>

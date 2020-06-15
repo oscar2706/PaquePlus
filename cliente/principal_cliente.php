@@ -135,16 +135,15 @@ if (isset($_SESSION['idUsuario'])) {
           </div>
         </div>
         <!-- Mis envios -->
-        <div class="col-sm-8">
+        <!-- <div class="col-sm-8">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Mis envíos</h5>
               <p class="card-text">Procesar un envío que ya fue pagado en línea para generar su guia de rastreo y poder enviarlo.</p>
-              <!-- Boton modal procesar envio -->
               <a href="historial.php" class="btn btn-primary text-white">Ver mi historial de envíos</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
