@@ -5,7 +5,6 @@ session_start();
 if (isset($_SESSION['idUsuario'])) {
   $idUsuario = $_SESSION['idUsuario'];
   $usuario = getInformacionUsuario($idUsuario);
-  // var_dump($usuario);
 }
 ?>
 
@@ -39,7 +38,7 @@ if (isset($_SESSION['idUsuario'])) {
     </div>
 
     <!-- Alerta aun no registras todos tus datos -->
-    <?php if ($usuario['idRemitente'] == null) : ?>
+    <?php if (!tieneInformacionRemitente($idUsuario)) : ?>
       <div class="container">
         <div class="row justify-content-center mt-4">
           <div class="col-12 col-md-9 col-lg-6 text-center">
@@ -48,16 +47,32 @@ if (isset($_SESSION['idUsuario'])) {
                 <span aria-hidden="true">&times;</span>
               </button>
               Aún no registras todos tus datos
-              <a href="">completa tu registro</a>
+              <a href="informacion_personal.php">completa tu registro</a>
             </div>
           </div>
         </div>
       </div>
     <?php else : ?>
-      <h1 class="text-center mt-3">Bienvenido <?php echo $idUsuario ?></h1>
+      <h1 class="text-center mt-4 text-secondary">Bienvenido</h1>
+      <h3 class="text-center mb-4"><?php echo $usuario['nombre'] ?></h3>
     <?php endif; ?>
-
-
+    
+    <?php if (isset($_SESSION['msg_exito'])) : ?>
+      <div class="container">
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 col-md-9 col-lg-6 text-center">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <?php echo $_SESSION['msg_exito'] ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php unset($_SESSION['msg_exito']) ?>
+    <?php endif; ?>
+      
     <!-- Menú -->
     <div class="container mt-3 mt-lg-3">
       <div class="row justify-content-center">
