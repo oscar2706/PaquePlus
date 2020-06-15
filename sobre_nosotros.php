@@ -112,7 +112,7 @@
       google_map = new google.maps.Map(document.getElementById("map"));
 
       // creación del geocoder
-      // geocoder = new google.maps.Geocoder();
+      geocoder = new google.maps.Geocoder();
 
       // para el cálculo de las distancias
       dirn = new google.maps.DirectionsService();

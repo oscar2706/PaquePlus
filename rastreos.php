@@ -73,7 +73,12 @@
       </div>
     </div>
   </div>
-
+  <footer class="text-muted mt-4">
+    <div class="container">
+      <p class="m-0">&copy; 2020 PaquePlus, Inc.</p>
+      <p>Diseñado por Oscar Patricio Hernández para la materia de Servicios Web</p>
+    </div>
+  </footer>
   <!-- Archivos JavaScript -->
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
