@@ -1,5 +1,11 @@
 <?php
+require_once('controller/conexion.php');
 session_start();
+$conn = getConnection();
+$query = $conn->prepare("SELECT * FROM Envio WHERE guiaRastreo = '" . $_GET['guia_rastreo'] . "' LIMIT 1");
+$query->execute();
+$envio = $query->fetch(PDO::FETCH_OBJ);
+// var_dump($envio);
 ?>
 <!doctype html>
 <html lang="es_MX">
@@ -15,7 +21,7 @@ session_start();
 
   <!-- GoogleMaps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtjLv5hvfP9NrrQXo7B0mO1UnhsLYZq3w"></script>
-  <title>Envíos</title>
+  <title>Rastreo de envío</title>
 </head>
 
 <body>
@@ -30,12 +36,12 @@ session_start();
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
     </nav>
-    <?php if(isset($_SESSION['idUsuario'])): ?>
+    <?php if (isset($_SESSION['idUsuario'])) : ?>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cliente/principal_cliente.php">Mi cuenta</a>
       <form action="controller/logout.php">
         <button type="submit" class="btn btn-outline-primary">Cerrar sesión</button>
       </form>
-    <?php else: ?>
+    <?php else : ?>
       <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
     <?php endif; ?>
   </div>
@@ -56,17 +62,16 @@ session_start();
               <th scope="col">Movimiento</th>
               <th scope="col">Fecha</th>
               <th scope="col">Ubicación</th>
-              <th scope="col">Hora</th>
+              <!-- <th scope="col">Hora</th> -->
             </tr>
           </thead>
           <tbody>
-            <?php for ($i = 0; $i < 10; $i++) : ?>
+            <?php for ($i = 0; $i < 1; $i++) : ?>
               <tr>
                 <th scopre="row">1</th>
-                <td>Recolección</td>
-                <td>21/06</td>
-                <td>Ciudad de México</td>
-                <td>18:00</td>
+                <td>Entregado a sucursal</td>
+                <td>15 de junio</td>
+                <td>Tulancingo, HGO</td>
               </tr>
             <?php endfor; ?>
           </tbody>
@@ -74,9 +79,9 @@ session_start();
       </div>
       <div class="col-12 col-xl-6">
         <div class="text-center">
-          <button id="btn-map" class="btn btn-primary mb-3" onclick="mostrar_gmaps()">Mostrar mapa</button>
+          <button id="btn-map" class="btn btn-primary mb-3" onclick="creaRuta()">Mostrar mapa</button>
         </div>
-        <div id="map" style="width: 100%; height: 500px" ></div>
+        <div id="map" style="width: 100%; height: 500px"></div>
       </div>
     </div>
   </div>
@@ -102,8 +107,6 @@ session_start();
       dir_disp.setMap(google_map);
 
       // posicionamiento en Paris
-      var punto = new google.maps.LatLng(20.067408, -98.418380);
-      google_map.setCenter(punto);
 
       google_map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
       google_map.setZoom(6);
@@ -206,6 +209,35 @@ session_start();
       dir_disp.setMap(google_map);
     }
 
+    function creaRuta(origen, destino) {
+      mostrar_gmaps();
+      var ciudadPartida = origen;
+      var ciudadLlegada = destino;
+
+      if (ciudadPartida != "" && ciudadLlegada != "") {
+        var request = {
+          origin: ciudadPartida,
+          destination: ciudadLlegada,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING
+        };
+        dirn.route(request, leer_distancia);
+      }
+    }
+
+    function creaRuta() {
+      mostrar_gmaps();
+      var ciudadPartida = 'Tulancingo';
+      var ciudadLlegada = 'Puebla';
+
+      if (ciudadPartida != "" && ciudadLlegada != "") {
+        var request = {
+          origin: ciudadPartida,
+          destination: ciudadLlegada,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING
+        };
+        dirn.route(request, leer_distancia);
+      }
+    }
   </script>
 </body>
 

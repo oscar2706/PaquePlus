@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <link href="assets/scss/styles.css" rel="stylesheet">
   <link href="assets/css/floating-labels.css" rel="stylesheet">
 
-  <title>Cotización</title>
+  <title>Nuevo envio</title>
 </head>
 
 <body>

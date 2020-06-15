@@ -43,7 +43,7 @@
   <!-- reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-  <title>PaquePlus - Iniciar sesión</title>
+  <title>PaquePlus - Registro</title>
 </head>
 
 <body>

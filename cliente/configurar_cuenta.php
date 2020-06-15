@@ -8,7 +8,7 @@ if (isset($_SESSION['idUsuario'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  echo "actualiza_usuario";
+  // echo "actualiza_usuario";
   // try {
   //   $sql = "INSERT INTO Usuario (correo, password) VALUES (?,?)";
   //   $stmt = $conn->prepare($sql);

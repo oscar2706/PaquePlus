@@ -13,7 +13,7 @@
   <link href="assets/scss/styles.css" rel="stylesheet">
   <link href="assets/css/album.css" rel="stylesheet">
 
-  <title>PaquePlus - Iniciar sesión</title>
+  <title>PaquePlus</title>
 </head>
 
 <body>

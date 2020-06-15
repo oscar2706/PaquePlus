@@ -107,7 +107,7 @@ if (isset($_SESSION['direcciones'])) {
 
   <!-- PayPal -->
   <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
-  <title>Cotización</title>
+  <title>Nuevo envio</title>
 </head>
 
 <body>

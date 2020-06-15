@@ -14,7 +14,7 @@
   <link href="assets/scss/styles.css" rel="stylesheet">
   <link href="assets/css/login.css" rel="stylesheet">
 
-  <title>PaquePlus - Iniciar sesión</title>
+  <title>Iniciar sesión</title>
 </head>
 
 <body>

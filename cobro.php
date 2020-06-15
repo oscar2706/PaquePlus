@@ -18,7 +18,7 @@ session_start();
   <!-- SweetAlert2 -->
   <script src="node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
 
-  <title>PaquePlus - Iniciar sesión</title>
+  <title>PaquePlus</title>
 </head>
 
 <body class="bg-light">

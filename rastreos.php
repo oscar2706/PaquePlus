@@ -14,7 +14,7 @@ session_start();
   <link href="assets/css/envios.css" rel="stylesheet">
   <link href="assets/css/floating-labels.css" rel="stylesheet">
 
-  <title>Envíos</title>
+  <title>Rastreos</title>
 </head>
 
 <body>

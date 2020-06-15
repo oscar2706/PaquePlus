@@ -13,7 +13,7 @@ session_start();
   <link href="../assets/scss/styles.css" rel="stylesheet">
   <link href="../assets/css/floating-labels.css" rel="stylesheet">
 
-  <title>PaquePlus - Iniciar sesión</title>
+  <title>Empleado</title>
 </head>
 
 <body class="bg-light">

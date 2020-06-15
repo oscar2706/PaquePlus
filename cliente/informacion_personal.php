@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link href="../assets/scss/styles.css" rel="stylesheet">
   <link href="../assets/css/floating-labels.css" rel="stylesheet">
 
-  <title>PaquePlus - Iniciar sesión</title>
+  <title>Información Personal</title>
 </head>
 
 <body class="bg-light">
