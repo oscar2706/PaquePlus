@@ -1,6 +1,6 @@
 <?php
+session_start();
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    session_start();
     echo "Petición POST";
     $_SESSION['direcciones'] = $_POST;
     $host = $_SERVER['HTTP_HOST'];
@@ -34,7 +34,14 @@
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
     </nav>
-    <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
+    <?php if(isset($_SESSION['idUsuario'])): ?>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cliente/principal_cliente.php">Mi cuenta</a>
+      <form action="controller/logout.php">
+        <button type="submit" class="btn btn-outline-primary">Cerrar sesión</button>
+      </form>
+    <?php else: ?>
+      <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
+    <?php endif; ?>
   </div>
 
   <form id="form-direcciones" method="POST">

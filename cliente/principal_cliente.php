@@ -29,7 +29,7 @@ if (isset($_SESSION['idUsuario'])) {
     <!-- Barra de navegación -->
     <div class="d-flex flex-column flex-md-row align-items-center py-3 py-lg-1 px-0 px-md-4 bg-white border-bottom shadow-sm">
       <div class="my-0 mr-md-auto font-weight-normal">
-        <a href="index.php"><img src="../assets/img/paquePlus.png" width="165" class="d-inline-block align-top" loading="lazy"></a>
+        <a href="../index.php"><img src="../assets/img/paquePlus.png" width="165" class="d-inline-block align-top" loading="lazy"></a>
       </div>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-1 p-sm-3 p-lg-3 text-dark" href="configurar_cuenta.php">Configurar cuenta</a>

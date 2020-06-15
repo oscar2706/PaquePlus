@@ -1,5 +1,5 @@
 <?php
-// echo $_GET['guia_rastreo'];
+session_start();
 ?>
 <!doctype html>
 <html lang="es_MX">
@@ -30,7 +30,14 @@
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
     </nav>
-    <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
+    <?php if(isset($_SESSION['idUsuario'])): ?>
+      <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cliente/principal_cliente.php">Mi cuenta</a>
+      <form action="controller/logout.php">
+        <button type="submit" class="btn btn-outline-primary">Cerrar sesión</button>
+      </form>
+    <?php else: ?>
+      <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
+    <?php endif; ?>
   </div>
 
   <div class="text-center mt-3 mt-lg-4 mb-4">
