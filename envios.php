@@ -28,12 +28,12 @@ session_start();
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
     </nav>
-    <?php if(isset($_SESSION['idUsuario'])): ?>
+    <?php if (isset($_SESSION['idUsuario'])) : ?>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cliente/principal_cliente.php">Mi cuenta</a>
       <form action="controller/logout.php">
         <button type="submit" class="btn btn-outline-primary">Cerrar sesión</button>
       </form>
-    <?php else: ?>
+    <?php else : ?>
       <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
     <?php endif; ?>
   </div>
@@ -50,31 +50,37 @@ session_start();
       <div class="col-12 col-lg-7 my-auto px-5">
         <h1 class="display-5">Entregando calidad</h1>
         <p class="lead">Envía y recibe paquetería con nosotros, contamos con la mejor atención al cliente y ofrecemos servicios de primera calidad.</p>
-        <!-- Boton modal rastero -->
-        <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#rastreo_Modal">
-          Solicitar un envío
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="rastreo_Modal" tabindex="-1" role="dialog" aria-labelledby="rastreo_ModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="rastreo_ModalLabel">Solicitar envío</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p class="m-0">¿Deseas realizar un envío rápido sin tener cuenta?</p>
-                <a href="nuevo_envio.php" class="btn btn-primary text-white mb-3">Continuar como invitado</a>
-                <p class="m-0">¿Eres un usuario registrado?</p>
-                <a href="login.php" class="btn btn-primary text-white mb-3">Inicar sesión</a>
-                <p class="m-0">¿Aún no tienes cuenta con nosotros?</p>
-                <a href="registro.php" class="btn btn-primary text-white mb-3">Registrarme</a>
+        <?php if (isset($_SESSION['idUsuario'])) : ?>
+          <a href="nuevo_envio.php" class="btn btn-block btn-primary text-white">
+            Solicitar un envío
+          </a>
+        <?php else : ?>
+          <!-- Boton modal rastero -->
+          <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#rastreo_Modal">
+            Solicitar un envío
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="rastreo_Modal" tabindex="-1" role="dialog" aria-labelledby="rastreo_ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="rastreo_ModalLabel">Solicitar envío</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p class="m-0">¿Deseas realizar un envío rápido sin tener cuenta?</p>
+                  <a href="nuevo_envio.php" class="btn btn-primary text-white mb-3">Continuar como invitado</a>
+                  <p class="m-0">¿Eres un usuario registrado?</p>
+                  <a href="login.php" class="btn btn-primary text-white mb-3">Inicar sesión</a>
+                  <p class="m-0">¿Aún no tienes cuenta con nosotros?</p>
+                  <a href="registro.php" class="btn btn-primary text-white mb-3">Registrarme</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>

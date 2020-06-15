@@ -1,5 +1,97 @@
 <?php
+include_once('controller/conexion.php');
 session_start();
+
+setlocale(LC_ALL, "es_ES", 'Spanish_Spain', 'Spanish');
+date_default_timezone_set('America/Mexico_City');
+$fecha_actual = date("Y-m-d");
+if (isset($_SESSION['direcciones'])) {
+  $conn = getConnection();
+  try {
+
+    // Se inserta el remitente
+    $sql = "INSERT INTO Remitente (nombre, empresa, direccion, codigo_postal, ciudad, estado, numero_contacto) 
+            VALUES (?,?,?,?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+      $_SESSION['direcciones']['origen_nombre'],
+      $_SESSION['direcciones']['origen_empresa'],
+      $_SESSION['direcciones']['origen_direccion'],
+      $_SESSION['direcciones']['origen_codigo_postal'],
+      $_SESSION['direcciones']['origen_ciudad'],
+      'Hidalgo',
+      $_SESSION['direcciones']['origen_numero'],
+    ]);
+
+    // Se obtiene idRemitente
+    $idRemitente = $conn->lastInsertId();
+
+    // Se inserta el destinatario
+    $sql = "INSERT INTO Destinatario (nombre, empresa, direccion, codigo_postal, ciudad, estado, numero_contacto) 
+            VALUES (?,?,?,?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+      $_SESSION['direcciones']['destino_nombre'],
+      $_SESSION['direcciones']['destino_empresa'],
+      $_SESSION['direcciones']['destino_direccion'],
+      $_SESSION['direcciones']['destino_codigo_postal'],
+      $_SESSION['direcciones']['destino_ciudad'],
+      'Puebla',
+      $_SESSION['direcciones']['destino_numero'],
+    ]);
+
+    // Se obtiene idDestinarario
+    $idDestinatario = $conn->lastInsertId();
+
+    $tipo_envio = 1;
+    switch ($_SESSION['paquete']['tipo_envio']) {
+      case 'Tortuga':
+        $tipo_envio = 1;
+        break;
+      case 'Normal':
+        $tipo_envio = 2;
+        break;
+      case 'Preferente':
+        $tipo_envio = 3;
+        break;
+      case 'Paloma':
+        $tipo_envio = 4;
+        break;
+    }
+
+    // Se inserta el envio
+    $sql = "INSERT INTO Envio (fechaSolicitud, costo, idTipoEnvio, idDestinatario, idRemitente) 
+            VALUES (?,?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+      $fecha_actual,
+      350,
+      $tipo_envio,
+      $idDestinatario,
+      $idRemitente
+    ]);
+
+    // Se obtiene el idEnvio
+    $numeroEnvio = $conn->lastInsertId();
+
+    // Se inserta el paquete
+    $sql = "INSERT INTO Paquete (size, peso, valor, contenido, numeroEnvio) 
+            VALUES (?,?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+      $_SESSION['paquete']['tamaño'],
+      intval($_SESSION['paquete']['peso']),
+      350.0,
+      $_SESSION['paquete']['contenido'],
+      $numeroEnvio
+    ]);
+    
+  } catch (PDOexception $e) {
+    if ($e->getCode() == 23000) {
+      $msgError = 'Este correo ya esta registrado';
+    }
+  }
+}
 ?>
 <!doctype html>
 <html lang="es_MX">
@@ -30,12 +122,12 @@ session_start();
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cotizacion.php">Cotización</a>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="sobre_nosotros.php">Sobre nosotros</a>
     </nav>
-    <?php if(isset($_SESSION['idUsuario'])): ?>
+    <?php if (isset($_SESSION['idUsuario'])) : ?>
       <a class="p-1 p-sm-3 p-lg-3 text-dark" href="cliente/principal_cliente.php">Mi cuenta</a>
       <form action="controller/logout.php">
         <button type="submit" class="btn btn-outline-primary">Cerrar sesión</button>
       </form>
-    <?php else: ?>
+    <?php else : ?>
       <a class="btn btn-outline-primary" href="login.php">Iniciar sesión</a>
     <?php endif; ?>
   </div>
@@ -44,9 +136,9 @@ session_start();
     <div class="text-center">
       <h1 class="my-3">Envío pagado ✅</h1>
       <p class="text-secondary h5 font-weight-light mt-3 mb-4">Tu envío ha sido pagado y ya esta registrado para ser procesado en nuestras sucursales</p>
-      <p class="font-weight-light h3 mt-5"><strong>Número de envío: </strong>123456789</p>
-      <p class="text-secondary">Acude a tu sucursal más cercana tu paquete y este código para poder procesarlo lo más pronto posible.</p>
-      <p class="text-secondary">Gracias por enviar con PaquePlus❤️😃</p>
+      <p class="font-weight-light h3 mt-5"><strong>Número de envío: </strong><?php echo $numeroEnvio ?></p>
+      <p class="text-secondary">Acude a tu sucursal más cercana con tu paquete y tu número de envío para poder procesarlo lo más pronto posible.</p>
+      <p class="text-secondary mt-3">Gracias por enviar con PaquePlus❤️😃</p>
     </div>
 
     <!-- Pagar -->

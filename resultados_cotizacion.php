@@ -44,11 +44,15 @@
           </div>
         </div>
         <div class="col-12 col-lg-3 text-center pr-xl-5 p-3">
-          <p class="text-primary m-0 pb-1 pb-lg-2">
-            <span class="text-secondary"><small>Incluye iva</small></span>
-            MXN <?php echo $cotizacion['precio'] ?>
-          </p>
-          <button class="btn-continuar btn btn-block btn-primary">Continuar a envío</button>
+          <div class="card">
+            <div class="card-body bg-primary">
+              <p class="text-white m-0 pb-1 pb-lg-2">
+                <span class="text-text-white-50"><small>Incluye iva</small></span>
+                MXN $<?php echo $cotizacion['precio'] ?>
+              </p>
+            </div>
+          </div>
+          <!-- <button class="btn-continuar btn btn-block btn-primary">Continuar a envío</button> -->
         </div>
       </div>
     </div>

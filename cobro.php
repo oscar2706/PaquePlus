@@ -50,58 +50,24 @@ session_start();
 
     <div class="row justify-content-center">
       <div class="col-md-8 order-md-1">
-        <h4 class="mb-3">Datos de pago</h4>
-        <form id="form-pago" novalidate>
-          <div class="row">
-            <div class="col-md-12 mb-3">
-              <label for="firstName">Nombre</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="email">Correo</label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com">
-          </div>
-
-          <div class="mb-3">
-            <label for="address">Dirección</label>
-            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="state">Estado</label>
-              <select class="custom-select d-block w-100" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="zip">Codigo postal</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-            </div>
-          </div>
-
-          <hr class="mb-4">
-
+        <form id="form-pago">
           <h4 class="mb-3">Tipo de pago</h4>
 
           <div class="d-block my-3">
             <div class="custom-control custom-radio">
               <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-              <label class="custom-control-label" for="credit">Credit card</label>
+              <label class="custom-control-label" for="credit">Tarjeta de crédito</label>
             </div>
             <div class="custom-control custom-radio">
               <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-              <label class="custom-control-label" for="debit">Debit card</label>
+              <label class="custom-control-label" for="debit">Tarjeta de debito</label>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="cc-name">Nombre en la tarjeta</label>
               <input type="text" class="form-control" id="cc-name" placeholder="" required>
-              <small class="text-muted">Full name as displayed on card</small>
+              <small class="text-muted">Nombre completo mostrado en la tarjeta</small>
             </div>
             <div class="col-md-6 mb-3">
               <label for="cc-number">Número de la tarjeta</label>
@@ -109,8 +75,10 @@ session_start();
             </div>
           </div>
           <div class="row">
-            <div class="col-md-3 mb-3">
-              <label for="cc-expiration">Fecha de expiración</label>
+            <div class="col-md-4 mb-3">
+              <label for="cc-expiration">Fecha de expiración
+                <span class="small text-secondary">mm/aa</span>
+              </label>
               <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
             </div>
             <div class="col-md-3 mb-3">
